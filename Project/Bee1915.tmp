@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://rrmxnn4x5uwn"]
+
+[ext_resource type="Script" path="res://bee.gd" id="1_ct3i1"]
+[ext_resource type="Texture2D" path="res://Sprites/Bee0.png" id="1_i5hhu"]
+[ext_resource type="Texture2D" path="res://Sprites/Bee1.png" id="2_v7egf"]
+[ext_resource type="Texture2D" uid="uid://cxm6tvis86dd2" path="res://Sprites/Flowers.png" id="4_dtiy4"]
+[ext_resource type="Script" path="res://node_2d.gd" id="5_m01g2"]
+[ext_resource type="Texture2D" uid="uid://i3cphrq0wy4u" path="res://Sprites/Inputs/W.png" id="6_wfkel"]
+[ext_resource type="Texture2D" uid="uid://c2vkllfqxcomv" path="res://Sprites/Inputs/A.png" id="7_duxiy"]
+[ext_resource type="Texture2D" uid="uid://cktotia13eikq" path="res://Sprites/Inputs/S.png" id="8_3uu68"]
+[ext_resource type="Texture2D" uid="uid://cbkiklurap4ai" path="res://Sprites/Inputs/D.png" id="9_tllma"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bg4kh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i5hhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v7egf")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 0.5
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bee" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(32, 32)
+scale = Vector2(4, 4)
+script = ExtResource("1_ct3i1")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bee"]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_bg4kh")
+animation = &"Fly"
+
+[node name="Flower" type="Area2D" parent="."]
+position = Vector2(544, 288)
+scale = Vector2(4, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flower"]
+texture = ExtResource("4_dtiy4")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1050, 33)
+scale = Vector2(4, 4)
+script = ExtResource("5_m01g2")
+metadata/_edit_group_ = true
+
+[node name="W" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("6_wfkel")
+
+[node name="A" type="Sprite2D" parent="Node2D"]
+position = Vector2(-16, 16)
+texture = ExtResource("7_duxiy")
+
+[node name="S" type="Sprite2D" parent="Node2D"]
+position = Vector2(0, 16)
+texture = ExtResource("8_3uu68")
+
+[node name="D" type="Sprite2D" parent="Node2D"]
+position = Vector2(16, 16)
+texture = ExtResource("9_tllma")

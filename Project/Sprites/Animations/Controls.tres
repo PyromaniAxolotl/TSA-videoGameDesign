@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://dcul8mbdfnxbx"]
+
+[ext_resource type="Texture2D" uid="uid://i3cphrq0wy4u" path="res://Sprites/Inputs/Up.png" id="1_1piv7"]
+[ext_resource type="Texture2D" uid="uid://cktotia13eikq" path="res://Sprites/Inputs/Down.png" id="2_2crqs"]
+[ext_resource type="Texture2D" uid="uid://c2vkllfqxcomv" path="res://Sprites/Inputs/Left.png" id="3_vg7ct"]
+[ext_resource type="Texture2D" uid="uid://cbkiklurap4ai" path="res://Sprites/Inputs/Right.png" id="4_u8hxk"]
+[ext_resource type="Texture2D" uid="uid://dbtxo8d2fb3y0" path="res://Sprites/Inputs/Grab.png" id="5_odg6y"]
+[ext_resource type="Texture2D" uid="uid://cchxygv6ig8ab" path="res://Sprites/Inputs/Use.png" id="6_1spka"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1piv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2crqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vg7ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u8hxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_odg6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1spka")
+}],
+"loop": true,
+"name": &"Controls",
+"speed": 5.0
+}]
