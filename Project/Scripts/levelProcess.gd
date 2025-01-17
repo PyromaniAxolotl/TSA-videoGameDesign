@@ -1,10 +1,16 @@
 extends Node
 
-var inputArray: Array = []
-var exclusiveInputArray: Array = []
 const controlList: Array = ["Up","Down","Left","Right","Grab","Use"] #An array of player controls for my sanity
 const movementAxes: Array = [Vector2i(0,-1),Vector2i(0,1),Vector2i(-1,0),Vector2i(1,0)]
+
+var inputArray: Array
+var tempInputArray: Array
+var exclusiveInputArray: Array
 var action: int = 0 #Keeps track of what action is being used during a turn
+
+signal tryPickup
+signal startUseItem
+signal useItem
 
 func correctInputs():
 	for i in range(len(inputArray)):
@@ -31,23 +37,38 @@ func displayInputs():
 			[$Controls/left,$Controls/middle,$Controls/right][i].visible = false
 
 func handleActions():
-	$Bee.actionable=false
-	if action>len(inputArray)-1:
+	%Player.actionable=false
+	if action==0: #tempInputArray allows players to prepare actions while the turn is taking place.
+		tempInputArray = inputArray.duplicate()
+	if action>=len(tempInputArray):
 		action=0
-		$Bee.actionable=true
+		%Player.actionable=true
 		return
-	if controlList.find(inputArray[action])<=4: #Checks for a movement action
-		$Bee.startMovement([Vector2(0,-1),Vector2(0,1),Vector2(-1,0),Vector2(1,0)][controlList.find(inputArray[action])]) #Runs the move function with one of four axes
+	var inputValue = controlList.find(tempInputArray[action])
+	if inputValue<=3: #Checks for a movement action
+		%Player.startMovement([Vector2(0,-1),Vector2(0,1),Vector2(-1,0),Vector2(1,0)][inputValue]) #Runs the move function with one of four axes
+	elif inputValue==4:
+		action+=1
+		tryPickup.emit()
+		handleActions()
+	elif inputValue==5:
+		action+=1
+		startUseItem.emit()
+		handleActions()
 
 # Called when the node enters the scene tree for the first time (good for duplicating nodes with script).
 func _ready() -> void:
-	$Bee.position = Vector2(64*$Bee.playerPos.x,64*$Bee.playerPos.y)
+	for node in get_tree().get_nodes_in_group("Pickupables"):
+		tryPickup.connect(node.tryPickup)
+		startUseItem.connect(node.startUseItem)
+		useItem.connect(node.useItem)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $Bee.actionable:
-		correctInputs()
-		if Input.is_action_just_pressed("Go") and $Bee.actionable:
-			handleActions()
+	correctInputs()
+	if Input.is_action_just_pressed("Go") and %Player.actionable:
+		handleActions()
+	if Input.is_action_just_pressed("Reset"): #Resets level to initial state.
+		print(get_tree_string_pretty())
+		get_tree().reload_current_scene()
 	displayInputs()
-	

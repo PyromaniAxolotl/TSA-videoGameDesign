@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=4 uid="uid://c2jbm2fapuvxk"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_1ovja"]
+[ext_resource type="Texture2D" uid="uid://cg8t4emlp03rl" path="res://Sprites/Bee/Unpollinated/Bee0.png" id="2_mo4fj"]
+[ext_resource type="Texture2D" uid="uid://diu6m42lw07va" path="res://Sprites/Bee/Unpollinated/Bee1.png" id="3_r7rmg"]
+[ext_resource type="Script" path="res://Scripts/target.gd" id="4_tic08"]
+[ext_resource type="Texture2D" uid="uid://cxm6tvis86dd2" path="res://Sprites/Flowers.png" id="5_4d38a"]
+[ext_resource type="SpriteFrames" uid="uid://dcul8mbdfnxbx" path="res://Sprites/Animations/Controls.tres" id="6_hd162"]
+[ext_resource type="Texture2D" uid="uid://c2l12vb5vad6l" path="res://TileSets/Grass.png" id="7_0bao8"]
+[ext_resource type="Texture2D" uid="uid://clhwlme7max1w" path="res://Sprites/Hive.png" id="8_aqn6d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1us83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mo4fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r7rmg")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 0.5
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejwmu"]
+texture = ExtResource("7_0bao8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+0:1/0/custom_data_0 = 1
+1:1/0 = 0
+1:1/0/custom_data_0 = 2
+2:1/0 = 0
+2:1/0/custom_data_0 = 3
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/custom_data_0 = 4
+1:2/0 = 0
+1:2/0/custom_data_0 = 5
+2:2/0 = 0
+2:2/0/custom_data_0 = 6
+3:2/0 = 0
+3:2/0/custom_data_0 = 5
+0:3/0 = 0
+0:3/0/custom_data_0 = 7
+1:3/0 = 0
+1:3/0/custom_data_0 = 8
+2:3/0 = 0
+2:3/0/custom_data_0 = 9
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qdojg"]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "walkability"
+custom_data_layer_0/type = 2
+sources/1 = SubResource("TileSetAtlasSource_ejwmu")
+
+[node name="level2" type="Node2D"]
+
+[node name="Player" type="Node2D" parent="."]
+unique_name_in_owner = true
+z_index = 2
+script = ExtResource("1_1ovja")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(4, 4)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_1us83")
+animation = &"Fly"
+centered = false
+flip_h = true
+
+[node name="Flower" type="Node2D" parent="."]
+position = Vector2(768, 256)
+script = ExtResource("4_tic08")
+gridPos = Vector2i(12, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Flower"]
+position = Vector2(4, 4)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("5_4d38a")
+centered = false
+
+[node name="Controls" type="Node2D" parent="."]
+unique_name_in_owner = true
+z_index = 3
+position = Vector2(576, 608)
+scale = Vector2(4, 4)
+metadata/_edit_group_ = true
+
+[node name="left" type="AnimatedSprite2D" parent="Controls"]
+position = Vector2(-32, 0)
+sprite_frames = ExtResource("6_hd162")
+animation = &"Controls"
+
+[node name="middle" type="AnimatedSprite2D" parent="Controls"]
+sprite_frames = ExtResource("6_hd162")
+animation = &"Controls"
+
+[node name="right" type="AnimatedSprite2D" parent="Controls"]
+position = Vector2(32, 0)
+sprite_frames = ExtResource("6_hd162")
+animation = &"Controls"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+z_index = -2
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAIAAAAAAAkAAQADAAEAAAARAAkAAQADAAEAAAARAAAAAQADAAEAAAABAAAAAQABAAIAAAAQAAAAAQADAAEAAAAPAAAAAQADAAEAAAAOAAAAAQADAAEAAAANAAAAAQADAAEAAAAMAAAAAQADAAEAAAALAAAAAQADAAEAAAAKAAAAAQADAAEAAAAJAAAAAQADAAEAAAAIAAAAAQADAAEAAAAHAAAAAQADAAEAAAAGAAAAAQADAAEAAAAFAAAAAQADAAEAAAAEAAAAAQADAAEAAAADAAAAAQADAAEAAAACAAAAAQADAAEAAAARAAEAAQADAAEAAAARAAIAAQADAAEAAAARAAMAAQADAAEAAAARAAQAAQADAAEAAAARAAUAAQADAAEAAAARAAYAAQADAAEAAAARAAcAAQADAAEAAAARAAgAAQADAAEAAAAQAAkAAQADAAEAAAAPAAkAAQADAAEAAAAOAAkAAQADAAEAAAANAAkAAQADAAEAAAAMAAkAAQADAAEAAAALAAkAAQADAAEAAAAKAAkAAQADAAEAAAAJAAkAAQADAAEAAAAIAAkAAQADAAEAAAAHAAkAAQADAAEAAAAGAAkAAQADAAEAAAAFAAkAAQADAAEAAAAEAAkAAQADAAEAAAADAAkAAQADAAEAAAACAAkAAQADAAEAAAABAAkAAQADAAEAAAAAAAEAAQABAAIAAAAAAAIAAQADAAEAAAAAAAMAAQADAAEAAAAAAAQAAQADAAEAAAAAAAUAAQADAAEAAAAAAAYAAQADAAEAAAAAAAcAAQADAAEAAAAAAAgAAQADAAEAAAABAAEAAQABAAIAAAABAAIAAQADAAEAAAABAAMAAQADAAEAAAABAAQAAQADAAEAAAABAAUAAQADAAEAAAABAAYAAQADAAEAAAABAAcAAQADAAEAAAABAAgAAQADAAEAAAACAAEAAQADAAEAAAACAAIAAQADAAEAAAACAAMAAQADAAEAAAACAAQAAQADAAEAAAACAAUAAQABAAIAAAACAAYAAQADAAEAAAACAAcAAQADAAEAAAACAAgAAQADAAEAAAADAAEAAQABAAIAAAADAAIAAQADAAEAAAADAAMAAQADAAEAAAADAAQAAQADAAEAAAADAAUAAQADAAEAAAADAAYAAQADAAEAAAADAAcAAQADAAEAAAADAAgAAQADAAEAAAAEAAEAAQABAAIAAAAEAAIAAQADAAEAAAAEAAMAAQADAAEAAAAEAAQAAQADAAEAAAAEAAUAAQADAAEAAAAEAAYAAQADAAEAAAAEAAcAAQADAAEAAAAEAAgAAQADAAEAAAAFAAEAAQABAAIAAAAFAAIAAQADAAEAAAAFAAMAAQADAAEAAAAFAAQAAQADAAEAAAAFAAUAAQABAAIAAAAFAAYAAQADAAEAAAAFAAcAAQADAAEAAAAFAAgAAQADAAEAAAAGAAEAAQABAAIAAAAGAAIAAQADAAEAAAAGAAMAAQADAAEAAAAGAAQAAQADAAEAAAAGAAUAAQABAAIAAAAGAAYAAQADAAEAAAAGAAcAAQADAAEAAAAGAAgAAQADAAEAAAAHAAEAAQABAAIAAAAHAAIAAQABAAIAAAAHAAMAAQABAAIAAAAHAAQAAQABAAIAAAAHAAUAAQABAAIAAAAHAAYAAQABAAIAAAAHAAcAAQADAAEAAAAHAAgAAQADAAEAAAAIAAEAAQADAAEAAAAIAAIAAQADAAEAAAAIAAMAAQADAAEAAAAIAAQAAQABAAIAAAAIAAUAAQADAAEAAAAIAAYAAQADAAEAAAAIAAcAAQADAAEAAAAIAAgAAQADAAEAAAAJAAEAAQADAAEAAAAJAAIAAQADAAEAAAAJAAMAAQADAAEAAAAJAAQAAQABAAIAAAAJAAUAAQADAAEAAAAJAAYAAQADAAEAAAAJAAcAAQADAAEAAAAJAAgAAQADAAEAAAAKAAEAAQADAAEAAAAKAAIAAQADAAEAAAAKAAMAAQADAAEAAAAKAAQAAQADAAEAAAAKAAUAAQADAAEAAAAKAAYAAQADAAEAAAAKAAcAAQADAAEAAAAKAAgAAQADAAEAAAALAAEAAQADAAEAAAALAAIAAQADAAEAAAALAAMAAQABAAIAAAALAAQAAQABAAIAAAALAAUAAQABAAIAAAALAAYAAQADAAEAAAALAAcAAQABAAIAAAALAAgAAQABAAIAAAAMAAEAAQADAAEAAAAMAAIAAQADAAEAAAAMAAMAAQABAAIAAAAMAAQAAQABAAIAAAAMAAUAAQABAAIAAAAMAAYAAQADAAEAAAAMAAcAAQABAAIAAAAMAAgAAQABAAIAAAANAAEAAQADAAEAAAANAAIAAQADAAEAAAANAAMAAQABAAIAAAANAAQAAQABAAIAAAANAAUAAQABAAIAAAANAAYAAQADAAEAAAANAAcAAQADAAEAAAANAAgAAQADAAEAAAAOAAEAAQADAAEAAAAOAAIAAQADAAEAAAAOAAMAAQADAAEAAAAOAAQAAQADAAEAAAAOAAUAAQADAAEAAAAOAAYAAQADAAEAAAAOAAcAAQADAAEAAAAOAAgAAQADAAEAAAAPAAEAAQADAAEAAAAPAAIAAQADAAEAAAAPAAMAAQADAAEAAAAPAAQAAQADAAEAAAAPAAUAAQADAAEAAAAPAAYAAQADAAEAAAAPAAcAAQADAAEAAAAPAAgAAQADAAEAAAAQAAEAAQADAAEAAAAQAAIAAQADAAEAAAAQAAMAAQADAAEAAAAQAAQAAQADAAEAAAAQAAUAAQADAAEAAAAQAAYAAQADAAEAAAAQAAcAAQADAAEAAAAQAAgAAQADAAEAAAA=")
+tile_set = SubResource("TileSet_qdojg")
+
+[node name="Hive" type="Node2D" parent="."]
+position = Vector2(128, 320)
+script = ExtResource("4_tic08")
+gridPos = Vector2i(2, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Hive"]
+position = Vector2(4, 4)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("8_aqn6d")
+centered = false

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgqqne3dkgukx"]
+
+[ext_resource type="Texture2D" uid="uid://cyawjhhvc6lxb" path="res://Sprites/Buttons/Exit.png" id="1_wlybp"]
+[ext_resource type="Script" path="res://Scripts/Buttons/exit.gd" id="2_8oqgq"]
+
+[node name="levelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 16.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_wlybp")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 36.0
+offset_bottom = 21.0
+scale = Vector2(4, 4)
+mouse_default_cursor_shape = 2
+flat = true
+vertical_icon_alignment = 0
+script = ExtResource("2_8oqgq")
