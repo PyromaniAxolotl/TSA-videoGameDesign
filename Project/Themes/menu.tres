@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bpklcfwver0p0"]
+
+[ext_resource type="FontFile" uid="uid://cq8yhcegeb8y7" path="res://Fonts/Hardpixel.OTF" id="1_mm3sw"]
+
+[resource]
+default_font = ExtResource("1_mm3sw")
+default_font_size = 32

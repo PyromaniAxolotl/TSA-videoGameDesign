@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7qaplxeiojwf"]
+
+[ext_resource type="Script" path="res://Scripts/watering_can.gd" id="1_pr8um"]
+[ext_resource type="Texture2D" uid="uid://by6jm6x4a0h5w" path="res://Sprites/Interactables/WateringCan.png" id="2_cksru"]
+
+[node name="Watering Can" type="Node2D" groups=["Pickupables"]]
+z_index = 1
+position = Vector2(576, 64)
+script = ExtResource("1_pr8um")
+gridPos = Vector2i(0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_cksru")
+centered = false

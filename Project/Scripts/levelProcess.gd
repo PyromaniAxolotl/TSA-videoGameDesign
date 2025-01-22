@@ -1,12 +1,15 @@
 extends Node
 
 const controlList: Array = ["Up","Down","Left","Right","Grab","Use"] #An array of player controls for my sanity
-const movementAxes: Array = [Vector2i(0,-1),Vector2i(0,1),Vector2i(-1,0),Vector2i(1,0)]
 
+@export var level: int
+var time: float
+var turns: int = 0
 var inputArray: Array
 var tempInputArray: Array
 var exclusiveInputArray: Array
 var action: int = 0 #Keeps track of what action is being used during a turn
+var turnQueue: int = 0
 
 signal tryPickup
 signal startUseItem
@@ -22,7 +25,6 @@ func correctInputs():
 		exclusiveInputArray.pop_at(index)
 
 	if len(inputArray)<3:
-		#I miss generators
 		for i in controlList: if (not i in inputArray) and (not i in exclusiveInputArray): #Runs through every input that wasn't pressed last frame, ignoring exclusives
 			if Input.is_action_just_pressed(i) and len(inputArray)<3: #Adds pressed inputs to inputArray
 				inputArray.append(i)
@@ -56,8 +58,14 @@ func handleActions():
 		startUseItem.emit()
 		handleActions()
 
+func finishLevel():
+	SaveManager.levelData[level]=[true,turns,time]
+	SaveManager.writeData()
+	TransitionManager.changeScene(load("res://level_select.tscn"))
+
 # Called when the node enters the scene tree for the first time (good for duplicating nodes with script).
 func _ready() -> void:
+	level-=1
 	for node in get_tree().get_nodes_in_group("Pickupables"):
 		tryPickup.connect(node.tryPickup)
 		startUseItem.connect(node.startUseItem)
@@ -65,10 +73,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if time>0:
+		time+=delta
+		$Timer.text = ":".join(str(time).pad_decimals(2).split("."))
+	$Label.text = str(turns)
 	correctInputs()
-	if Input.is_action_just_pressed("Go") and %Player.actionable:
+	if Input.is_action_just_pressed("Go"):
+		turnQueue += 1
+		if time==0:
+			time+=delta
+	if turnQueue and %Player.actionable:
 		handleActions()
+		turns+=1
+		turnQueue-=1
 	if Input.is_action_just_pressed("Reset"): #Resets level to initial state.
-		print(get_tree_string_pretty())
 		get_tree().reload_current_scene()
 	displayInputs()

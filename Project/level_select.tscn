@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgqqne3dkgukx"]
+[gd_scene load_steps=13 format=3 uid="uid://bgqqne3dkgukx"]
 
-[ext_resource type="Texture2D" uid="uid://cyawjhhvc6lxb" path="res://Sprites/Buttons/Exit.png" id="1_wlybp"]
-[ext_resource type="Script" path="res://Scripts/Buttons/exit.gd" id="2_8oqgq"]
+[ext_resource type="Theme" uid="uid://bpklcfwver0p0" path="res://Themes/menu.tres" id="1_0kvb6"]
+[ext_resource type="Script" path="res://Scripts/levelSelectScene.gd" id="2_pg0y2"]
+[ext_resource type="FontFile" uid="uid://cq8yhcegeb8y7" path="res://Fonts/Hardpixel.OTF" id="2_pkmp3"]
+[ext_resource type="Texture2D" uid="uid://d1lnuex8ja3ys" path="res://Sprites/UI/levelHex.png" id="4_62ygs"]
+[ext_resource type="Script" path="res://Scripts/level_grid.gd" id="4_co2k3"]
+[ext_resource type="Texture2D" uid="uid://cg6eal0jrk06a" path="res://Sprites/UI/objectiveFlower.png" id="5_2uo2k"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelSelect.gd" id="5_mx2bx"]
+[ext_resource type="Texture2D" uid="uid://rixy4vnqgxso" path="res://Sprites/UI/Buttons/Exit0.png" id="6_ds3d7"]
+[ext_resource type="Texture2D" uid="uid://babperfeq0aud" path="res://Sprites/UI/Buttons/Exit1.png" id="7_hc437"]
+[ext_resource type="Script" path="res://texture_button.gd" id="7_mqgpx"]
+[ext_resource type="Script" path="res://Scripts/Buttons/exit.gd" id="11_8l5ss"]
+
+[sub_resource type="Theme" id="Theme_hefma"]
+default_font = ExtResource("2_pkmp3")
+default_font_size = 32
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/fonts/Font = ExtResource("2_pkmp3")
+MarginContainer/constants/margin_bottom = 40
 
 [node name="levelSelect" type="Control"]
 layout_mode = 3
@@ -10,25 +27,67 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_0kvb6")
+script = ExtResource("2_pg0y2")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="levelGrid" type="GridContainer" parent="."]
+layout_mode = 1
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 576.0
+pivot_offset = Vector2(512, 256)
+theme = SubResource("Theme_hefma")
+theme_override_constants/h_separation = 76
+columns = 5
+script = ExtResource("4_co2k3")
+
+[node name="levelSelectTemplate1" type="AspectRatioContainer" parent="levelGrid"]
+layout_mode = 2
+script = ExtResource("5_mx2bx")
+
+[node name="TextureButton" type="TextureButton" parent="levelGrid/levelSelectTemplate1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+action_mode = 0
+texture_normal = ExtResource("4_62ygs")
+stretch_mode = 0
+script = ExtResource("7_mqgpx")
+
+[node name="MarginContainer" type="MarginContainer" parent="levelGrid/levelSelectTemplate1/TextureButton"]
+layout_mode = 2
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 168.0
+
+[node name="Label" type="Label" parent="levelGrid/levelSelectTemplate1/TextureButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+
+[node name="flowerCompletion" type="Sprite2D" parent="levelGrid/levelSelectTemplate1"]
+position = Vector2(28, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("5_2uo2k")
+
+[node name="flowerTurns" type="Sprite2D" parent="levelGrid/levelSelectTemplate1"]
+position = Vector2(72, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("5_2uo2k")
+
+[node name="flowerTime" type="Sprite2D" parent="levelGrid/levelSelectTemplate1"]
+position = Vector2(116, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("5_2uo2k")
+
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 16.0
 scale = Vector2(4, 4)
-texture = ExtResource("1_wlybp")
-
-[node name="Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0)
-self_modulate = Color(1, 1, 1, 0)
-clip_contents = true
-layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 36.0
-offset_bottom = 21.0
-scale = Vector2(4, 4)
 mouse_default_cursor_shape = 2
-flat = true
-vertical_icon_alignment = 0
-script = ExtResource("2_8oqgq")
+texture_normal = ExtResource("6_ds3d7")
+texture_pressed = ExtResource("7_hc437")
+script = ExtResource("11_8l5ss")

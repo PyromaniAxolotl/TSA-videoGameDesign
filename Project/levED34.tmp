@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://bgqqne3dkgukx"]
+
+[ext_resource type="Texture2D" uid="uid://dhv8d5jjcmcj3" path="res://Sprites/UI/Buttons/Exit.png" id="1_wlybp"]
+[ext_resource type="Script" path="res://Scripts/Buttons/exit.gd" id="2_8oqgq"]
+[ext_resource type="Script" path="res://Scripts/button_sprite.gd" id="2_hysjx"]
+[ext_resource type="Texture2D" uid="uid://d1lnuex8ja3ys" path="res://Sprites/UI/levelHex.png" id="4_62ygs"]
+[ext_resource type="Script" path="res://Scripts/level_grid.gd" id="4_co2k3"]
+[ext_resource type="Texture2D" uid="uid://cg6eal0jrk06a" path="res://Sprites/UI/objectiveFlower.png" id="5_2uo2k"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelSelect.gd" id="5_mx2bx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kpvx"]
+atlas = ExtResource("1_wlybp")
+region = Rect2(2, 2, 28, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf3qr"]
+atlas = ExtResource("1_wlybp")
+region = Rect2(2, 18, 28, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ktad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kpvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf3qr")
+}],
+"loop": true,
+"name": &"press",
+"speed": 5.0
+}]
+
+[sub_resource type="SystemFont" id="SystemFont_kebtc"]
+
+[sub_resource type="SystemFont" id="SystemFont_q0lkj"]
+generate_mipmaps = true
+
+[sub_resource type="Theme" id="Theme_hefma"]
+default_font = SubResource("SystemFont_q0lkj")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/fonts/Font = SubResource("SystemFont_kebtc")
+
+[node name="levelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="levelSelectTemplate" type="AspectRatioContainer" parent="."]
+layout_mode = 2
+offset_left = 114.0
+offset_top = 52.0
+offset_right = 178.0
+offset_bottom = 116.0
+script = ExtResource("5_mx2bx")
+
+[node name="TextureButton" type="TextureButton" parent="levelSelectTemplate"]
+layout_mode = 2
+texture_normal = ExtResource("4_62ygs")
+stretch_mode = 0
+
+[node name="flowerCompletion" type="Sprite2D" parent="levelSelectTemplate"]
+visible = false
+position = Vector2(21, 52)
+texture = ExtResource("5_2uo2k")
+
+[node name="flowerTurns" type="Sprite2D" parent="levelSelectTemplate"]
+visible = false
+position = Vector2(31, 42)
+texture = ExtResource("5_2uo2k")
+
+[node name="flowerTime" type="Sprite2D" parent="levelSelectTemplate"]
+visible = false
+position = Vector2(41, 52)
+texture = ExtResource("5_2uo2k")
+
+[node name="Label" type="Label" parent="levelSelectTemplate"]
+layout_mode = 2
+text = "1 - 0"
+horizontal_alignment = 1
+
+[node name="Exit Button" type="Node2D" parent="."]
+
+[node name="TextureRect" type="AnimatedSprite2D" parent="Exit Button"]
+position = Vector2(16, 16)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_8ktad")
+animation = &"press"
+centered = false
+script = ExtResource("2_hysjx")
+
+[node name="Button" type="Button" parent="Exit Button"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 44.0
+offset_bottom = 28.0
+scale = Vector2(4, 4)
+mouse_default_cursor_shape = 2
+flat = true
+script = ExtResource("2_8oqgq")
+
+[node name="levelGrid" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -100.0
+offset_right = 168.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.75, 2.75)
+pivot_offset = Vector2(168, 96)
+theme = SubResource("Theme_hefma")
+columns = 5
+script = ExtResource("4_co2k3")

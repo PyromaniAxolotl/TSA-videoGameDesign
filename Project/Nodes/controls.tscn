@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://du5cqtoo3qpi5"]
+
+[ext_resource type="SpriteFrames" uid="uid://dcul8mbdfnxbx" path="res://Sprites/Animations/Controls.tres" id="1_5jky8"]
+
+[node name="Controls" type="Node2D"]
+z_index = 3
+position = Vector2(576, 608)
+scale = Vector2(4, 4)
+metadata/_edit_group_ = true
+
+[node name="left" type="AnimatedSprite2D" parent="."]
+position = Vector2(-32, 0)
+sprite_frames = ExtResource("1_5jky8")
+animation = &"Controls"
+
+[node name="middle" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_5jky8")
+animation = &"Controls"
+
+[node name="right" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 0)
+sprite_frames = ExtResource("1_5jky8")
+animation = &"Controls"

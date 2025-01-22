@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://66alwqm2epd2"]
+
+[ext_resource type="Script" path="res://Scripts/seed0.gd" id="1_oon6i"]
+[ext_resource type="Texture2D" uid="uid://b5uf7ayanu0e4" path="res://Sprites/Seeds/seed0.png" id="2_vrho7"]
+
+[node name="Seed" type="Node2D" groups=["Pickupables"]]
+position = Vector2(448, 64)
+script = ExtResource("1_oon6i")
+gridPos = Vector2i(7, 1)
+id = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_vrho7")
+centered = false
