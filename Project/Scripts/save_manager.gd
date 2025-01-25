@@ -10,12 +10,10 @@ func loadData(initial: bool = 0):
 		for k in range(numberOfLevels):
 			levelData.append([false,0,0])
 	while saveData.get_position() < saveData.get_length():
-		print("Position: ", saveData.get_position()," Length: ",saveData.get_length())
 		levelData[i] = Array(saveData.get_line().split(" "))
 		levelData[i][0] = levelData[i][0]=="true" #Complete
 		levelData[i][1] = int(levelData[i][1]) #Turns
 		levelData[i][2] = float(levelData[i][2]) #Time
-		print("LevelData ",i,": ",levelData[i])
 		i+=1
 
 func writeData():

@@ -12,8 +12,6 @@ var action: int = 0 #Keeps track of what action is being used during a turn
 var turnQueue: int = 0
 
 signal tryPickup
-signal startUseItem
-signal useItem
 
 func correctInputs():
 	for i in range(len(inputArray)):
@@ -55,7 +53,8 @@ func handleActions():
 		handleActions()
 	elif inputValue==5:
 		action+=1
-		startUseItem.emit()
+		if %Player/Sprite2D.get_child_count()==1:
+			%Player/Sprite2D.get_children()[0].useItem()
 		handleActions()
 
 func finishLevel():
@@ -68,8 +67,6 @@ func _ready() -> void:
 	level-=1
 	for node in get_tree().get_nodes_in_group("Pickupables"):
 		tryPickup.connect(node.tryPickup)
-		startUseItem.connect(node.startUseItem)
-		useItem.connect(node.useItem)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

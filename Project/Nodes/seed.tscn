@@ -6,7 +6,6 @@
 [node name="Seed" type="Node2D" groups=["Pickupables"]]
 position = Vector2(448, 64)
 script = ExtResource("1_oon6i")
-gridPos = Vector2i(7, 1)
 id = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

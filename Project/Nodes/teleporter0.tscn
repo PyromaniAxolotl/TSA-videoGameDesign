@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxncfucgs4jet"]
+
+[ext_resource type="Shader" path="res://Shaders/teleporter.gdshader" id="1_a4ojd"]
+[ext_resource type="Script" path="res://Classes/Teleporter/teleporter.gd" id="1_pw48e"]
+[ext_resource type="Texture2D" uid="uid://bp8wv4cpaa7lk" path="res://Sprites/Interactables/Teleporter.png" id="2_h1tgq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fedfv"]
+resource_local_to_scene = true
+shader = ExtResource("1_a4ojd")
+shader_parameter/new_color = Color(0.556741, 0, 0.172879, 1)
+
+[node name="Teleporter0" type="Node2D" groups=["Pickupables"]]
+position = Vector2(1216, -192)
+script = ExtResource("1_pw48e")
+id = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fedfv")
+scale = Vector2(4, 4)
+texture = ExtResource("2_h1tgq")
+centered = false

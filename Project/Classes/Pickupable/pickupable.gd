@@ -1,19 +1,16 @@
 class_name Pickupable extends Node2D
 
-@export var gridPos: Vector2i
 @export var id: int
+var gridPos: Vector2i
 
-func startUseItem():
-	if $".."==%Player/Sprite2D:
-		$"../../..".useItem.emit(id)
-
-func useItem(thingything):
+func useItem():
 	pass
 
 func tryPickup():
 	if $".."==%Player/Sprite2D:
-		gridPos=$"../..".gridPos
+		gridPos=%Player.gridPos
 		reparent($"../../..")
+		position=%Player.position
 		pickupTransform(0)
 	elif gridPos == %Player.gridPos:
 		reparent(%Player/Sprite2D)
@@ -23,7 +20,7 @@ func pickupTransform(hold: bool):
 	if hold:
 		$Sprite2D.scale=Vector2(2,2)
 	else:
-		$Sprite2D.scale=Vector2(3.5,3.5)
+		$Sprite2D.scale=Vector2(4,4)
 
 func _ready():
 	gridPos = position/64
