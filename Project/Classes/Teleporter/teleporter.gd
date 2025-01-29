@@ -1,8 +1,9 @@
 @icon("res://Classes/Teleporter/Teleporter.png")
 class_name teleporter extends Pickupable
 
-@export var color: Color
 @onready var partner = get_node(NodePath("../"+name.substr(0,len(name)-1)+str(int(name.substr(len(name)-1))+(1+(-2*((int(name.substr(len(name)-1))%2)))))))
+@onready var color = material.get_shader_parameter("new_color")
+@export var syncColors: bool = 1
 
 func useItem():
 	var player = %Player
@@ -13,7 +14,6 @@ func useItem():
 
 
 func _ready():
-	$Sprite2D.material.set_shader_parameter("new_color",color)
-	get_node(NodePath(str(partner.get_path())+"/Sprite2D")).material.set_shader_parameter("new_color",color)
+	if syncColors: partner.material.set_shader_parameter("new_color",color)
 	gridPos = position/64
 	position = gridPos*64

@@ -25,7 +25,6 @@ func writeData():
 		saveData.store_line(" ".join(i))
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().set_auto_accept_quit(false)
 	if not FileAccess.file_exists("user://saveData.dat"):
 		var saveData = FileAccess.open("user://saveData.dat", FileAccess.WRITE)
 		for i in range(numberOfLevels): #Creates an uncompleted level for each level.
@@ -33,10 +32,3 @@ func _ready() -> void:
 			saveData.store_line("false 0 0")
 	else:
 		loadData(true)
-
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		writeData()
-		get_tree().quit()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.

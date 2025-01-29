@@ -73,7 +73,7 @@ func _process(delta: float) -> void:
 	if time>0:
 		time+=delta
 		$Timer.text = ":".join(str(time).pad_decimals(2).split("."))
-	$Label.text = str(turns)
+	$Turns.text = str(turns)
 	correctInputs()
 	if Input.is_action_just_pressed("Go"):
 		turnQueue += 1

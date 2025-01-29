@@ -6,7 +6,7 @@
 
 [node name="SaveManager" type="Node"]
 script = ExtResource("1_6bcq1")
-numberOfLevels = 5
+numberOfLevels = 2
 
 [node name="Label" type="Label" parent="."]
 visible = false

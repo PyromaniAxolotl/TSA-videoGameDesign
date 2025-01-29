@@ -1,7 +1,8 @@
 extends Control
 
 var completionCriteria = [
-	[11,8.0]
+	[11,8.0],
+	[12,30.0]
 ]
 
 func _ready():

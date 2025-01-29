@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Buttons/levelSelect.gd" id="5_mx2bx"]
 [ext_resource type="Texture2D" uid="uid://rixy4vnqgxso" path="res://Sprites/UI/Buttons/Exit0.png" id="6_ds3d7"]
 [ext_resource type="Texture2D" uid="uid://babperfeq0aud" path="res://Sprites/UI/Buttons/Exit1.png" id="7_hc437"]
-[ext_resource type="Script" path="res://Scripts/levelButton.gd" id="7_mqgpx"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelButton.gd" id="7_mqgpx"]
 [ext_resource type="Script" path="res://Scripts/Buttons/exit.gd" id="11_8l5ss"]
 [ext_resource type="Script" path="res://delSave.gd" id="12_uws3e"]
 

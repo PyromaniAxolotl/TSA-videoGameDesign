@@ -1,4 +1,15 @@
-[gd_scene format=3 uid="uid://dvdcdvvur6uy1"]
+[gd_scene load_steps=11 format=3 uid="uid://dvdcdvvur6uy1"]
+
+[ext_resource type="Texture2D" uid="uid://bausbocqtq2on" path="res://Sprites/UI/Buttons/Start0.png" id="1_2tf1x"]
+[ext_resource type="Texture2D" uid="uid://w6ojpvff8n4n" path="res://Sprites/UI/TitleCard.png" id="1_65l1t"]
+[ext_resource type="Texture2D" uid="uid://dqsrfck88wv1w" path="res://Sprites/UI/Buttons/Start1.png" id="2_hev2d"]
+[ext_resource type="Script" path="res://Scripts/Buttons/startButton.gd" id="3_f7uja"]
+[ext_resource type="Texture2D" uid="uid://b07n6d6srbao3" path="res://Sprites/UI/Buttons/Quit0.png" id="4_34dpi"]
+[ext_resource type="Script" path="res://Scripts/Buttons/quitButton.gd" id="4_hbig8"]
+[ext_resource type="Texture2D" uid="uid://cw2ypnljn2jwi" path="res://Sprites/UI/Buttons/Options0.png" id="4_u4mje"]
+[ext_resource type="Texture2D" uid="uid://ckh3xido2sdno" path="res://Sprites/UI/Buttons/Quit1.png" id="5_1xf3k"]
+[ext_resource type="Texture2D" uid="uid://so2xpigkuexl" path="res://Sprites/UI/Buttons/Options1.png" id="5_lfv44"]
+[ext_resource type="Texture2D" uid="uid://co00bteohu058" path="res://Sprites/UI/Main Menu.png" id="10_amd5o"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -7,3 +18,58 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 160.0
+scale = Vector2(4, 4)
+mouse_filter = 2
+texture = ExtResource("10_amd5o")
+
+[node name="start menu" type="Node" parent="."]
+
+[node name="Title Card" type="TextureRect" parent="start menu"]
+offset_left = 320.0
+offset_top = 24.0
+offset_right = 448.0
+offset_bottom = 64.0
+scale = Vector2(4, 4)
+mouse_filter = 2
+texture = ExtResource("1_65l1t")
+
+[node name="Start" type="TextureButton" parent="start menu"]
+offset_left = 384.0
+offset_top = 304.0
+offset_right = 448.0
+offset_bottom = 320.0
+scale = Vector2(6, 6)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("1_2tf1x")
+texture_pressed = ExtResource("2_hev2d")
+script = ExtResource("3_f7uja")
+
+[node name="Options" type="TextureButton" parent="start menu"]
+visible = false
+offset_left = 384.0
+offset_top = 400.0
+offset_right = 448.0
+offset_bottom = 416.0
+scale = Vector2(6, 6)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_u4mje")
+texture_pressed = ExtResource("5_lfv44")
+script = ExtResource("3_f7uja")
+
+[node name="Quit" type="TextureButton" parent="start menu"]
+offset_left = 384.0
+offset_top = 400.0
+offset_right = 448.0
+offset_bottom = 416.0
+scale = Vector2(6, 6)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_34dpi")
+texture_pressed = ExtResource("5_1xf3k")
+script = ExtResource("4_hbig8")
