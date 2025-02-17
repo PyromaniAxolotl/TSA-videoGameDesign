@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://s61p2ovfes3f"]
 
 [ext_resource type="Script" path="res://Scripts/target.gd" id="1_8l3r1"]
-[ext_resource type="Texture2D" uid="uid://b8qx3gnpkhj4s" path="res://Sprites/Hive1.png" id="2_2aewd"]
+[ext_resource type="Texture2D" uid="uid://c5f5rvv7m25nm" path="res://Sprites/Interactables/Hive.png" id="2_fsona"]
 
 [node name="Hive" type="Node2D"]
-position = Vector2(384, 128)
 script = ExtResource("1_8l3r1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
-texture = ExtResource("2_2aewd")
+texture = ExtResource("2_fsona")
 centered = false

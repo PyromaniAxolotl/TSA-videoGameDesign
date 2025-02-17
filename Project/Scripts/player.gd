@@ -11,10 +11,10 @@ const tileInaccessibility: Array = [
 [Vector2i(1,0),Vector2i(0,-1)],
 [Vector2i(0,-1)],
 [Vector2i(-1,0),Vector2i(0,-1)],
-[Vector2i(0,-1),Vector2i(1,0),Vector2i(0,1)],
+[Vector2i(1,0),Vector2i(0,-1),Vector2i(0,1)],
 [Vector2i(-1,0),Vector2i(0,-1),Vector2i(0,1)],
 [Vector2i(-1,0),Vector2i(1,0),Vector2i(0,1)],
-[Vector2i(-1,0),Vector2i(0,-1),Vector2i(1,0)],
+[Vector2i(-1,0),Vector2i(1,0),Vector2i(0,-1)],
 [Vector2i(0,-1),Vector2i(0,1)],
 [Vector2i(-1,0),Vector2i(1,0)],
 ]
@@ -33,6 +33,8 @@ func startMovement(moveVector:Vector2i):
 			$AnimationPlayer.play(["up","down","left","right"][[Vector2i(0,-1),Vector2i(0,1),Vector2i(-1,0),Vector2i(1,0)].find(moveVector)])
 			gridPos+=moveVector
 			return
+		else:
+			print(walkability)
 	$"..".action+=1
 	$"..".handleActions()
 

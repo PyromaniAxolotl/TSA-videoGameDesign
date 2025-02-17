@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://confde55xdcg3"]
 
 [ext_resource type="Script" path="res://Scripts/target.gd" id="1_1ncg2"]
-[ext_resource type="Texture2D" uid="uid://cxm6tvis86dd2" path="res://Sprites/Flowers.png" id="2_5s2rh"]
+[ext_resource type="Texture2D" uid="uid://cxm6tvis86dd2" path="res://Sprites/Interactables/Flowers.png" id="2_5s2rh"]
 
 [node name="Flower" type="Node2D"]
 position = Vector2(768, 64)

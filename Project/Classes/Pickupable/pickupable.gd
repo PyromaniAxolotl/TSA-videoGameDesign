@@ -1,6 +1,6 @@
 class_name Pickupable extends Node2D
 
-@export var id: int
+@export_range(0,2) var id: int
 var gridPos: Vector2i
 
 func useItem():

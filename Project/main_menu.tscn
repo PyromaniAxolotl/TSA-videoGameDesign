@@ -1,45 +1,192 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvdcdvvur6uy1"]
+[gd_scene load_steps=46 format=3 uid="uid://dvdcdvvur6uy1"]
 
-[ext_resource type="Texture2D" uid="uid://bausbocqtq2on" path="res://Sprites/UI/Buttons/Start0.png" id="1_2tf1x"]
-[ext_resource type="Texture2D" uid="uid://w6ojpvff8n4n" path="res://Sprites/UI/TitleCard.png" id="1_65l1t"]
-[ext_resource type="Texture2D" uid="uid://dqsrfck88wv1w" path="res://Sprites/UI/Buttons/Start1.png" id="2_hev2d"]
-[ext_resource type="Script" path="res://Scripts/Buttons/startButton.gd" id="3_f7uja"]
-[ext_resource type="Texture2D" uid="uid://b07n6d6srbao3" path="res://Sprites/UI/Buttons/Quit0.png" id="4_34dpi"]
-[ext_resource type="Script" path="res://Scripts/Buttons/quitButton.gd" id="4_hbig8"]
-[ext_resource type="Texture2D" uid="uid://cw2ypnljn2jwi" path="res://Sprites/UI/Buttons/Options0.png" id="4_u4mje"]
-[ext_resource type="Texture2D" uid="uid://ckh3xido2sdno" path="res://Sprites/UI/Buttons/Quit1.png" id="5_1xf3k"]
-[ext_resource type="Texture2D" uid="uid://so2xpigkuexl" path="res://Sprites/UI/Buttons/Options1.png" id="5_lfv44"]
-[ext_resource type="Texture2D" uid="uid://co00bteohu058" path="res://Sprites/UI/Main Menu.png" id="10_amd5o"]
+[ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_mupe6"]
+[ext_resource type="Texture2D" uid="uid://cg5qcoescoyen" path="res://Sprites/UI/Backgrounds/BigBackground.png" id="1_w8xd1"]
+[ext_resource type="Script" path="res://Scripts/startMenu.gd" id="3_f5iy4"]
+[ext_resource type="Texture2D" uid="uid://w6ojpvff8n4n" path="res://Sprites/UI/Backgrounds/TitleCard.png" id="4_mx6eg"]
+[ext_resource type="Theme" uid="uid://bpklcfwver0p0" path="res://Themes/menu.tres" id="4_y25nh"]
+[ext_resource type="Script" path="res://Scripts/levelSelectScene.gd" id="5_blnvl"]
+[ext_resource type="Texture2D" uid="uid://bausbocqtq2on" path="res://Sprites/UI/Buttons/Start0.png" id="5_qsgoc"]
+[ext_resource type="Texture2D" uid="uid://dqsrfck88wv1w" path="res://Sprites/UI/Buttons/Start1.png" id="6_5u66b"]
+[ext_resource type="Texture2D" uid="uid://rixy4vnqgxso" path="res://Sprites/UI/Buttons/Exit0.png" id="6_v3jvq"]
+[ext_resource type="Texture2D" uid="uid://babperfeq0aud" path="res://Sprites/UI/Buttons/Exit1.png" id="7_hnvc6"]
+[ext_resource type="Texture2D" uid="uid://cw2ypnljn2jwi" path="res://Sprites/UI/Buttons/Options0.png" id="7_jk5bv"]
+[ext_resource type="Texture2D" uid="uid://so2xpigkuexl" path="res://Sprites/UI/Buttons/Options1.png" id="8_mpt8f"]
+[ext_resource type="Texture2D" uid="uid://b07n6d6srbao3" path="res://Sprites/UI/Buttons/Quit0.png" id="9_yaddk"]
+[ext_resource type="Texture2D" uid="uid://ckh3xido2sdno" path="res://Sprites/UI/Buttons/Quit1.png" id="10_7if6e"]
+[ext_resource type="Texture2D" uid="uid://bnhmgwd6y4av3" path="res://Sprites/UI/Buttons/worldSelect00.png" id="10_i0jjh"]
+[ext_resource type="Texture2D" uid="uid://bg6h1lt4cgtmo" path="res://Sprites/UI/Backgrounds/InputPopupBG.png" id="11_3skk3"]
+[ext_resource type="Texture2D" uid="uid://eo77d0vspals" path="res://Sprites/UI/Buttons/worldSelect01.png" id="11_7pdve"]
+[ext_resource type="Texture2D" uid="uid://vmveasmfsgjp" path="res://Sprites/UI/keyboards/Keyboards.png" id="11_h8k6e"]
+[ext_resource type="Script" path="res://Scripts/infoButton.gd" id="11_u6pfo"]
+[ext_resource type="Texture2D" uid="uid://c2ylmus6iqv5t" path="res://Sprites/UI/Buttons/worldSelect10.png" id="12_a5w8y"]
+[ext_resource type="Texture2D" uid="uid://cavy5c8lfrgqe" path="res://Sprites/UI/Buttons/1Player0.png" id="12_g77bq"]
+[ext_resource type="Texture2D" uid="uid://c4ca33r0wn7d7" path="res://Sprites/UI/Buttons/1Player1.png" id="13_2g5au"]
+[ext_resource type="Texture2D" uid="uid://hk1dhanjudw7" path="res://Sprites/UI/Buttons/worldSelect11.png" id="13_df4fn"]
+[ext_resource type="FontFile" uid="uid://cq8yhcegeb8y7" path="res://Fonts/Hardpixel.OTF" id="14_e7mnu"]
+[ext_resource type="Script" path="res://Scripts/playerButton.gd" id="14_h8ou8"]
+[ext_resource type="Script" path="res://Scripts/level_grid.gd" id="15_8j85v"]
+[ext_resource type="Texture2D" uid="uid://dfprwq074v003" path="res://Sprites/UI/Buttons/2Player0.png" id="15_y86s1"]
+[ext_resource type="Texture2D" uid="uid://cjqmhtw1gu3l" path="res://Sprites/UI/Buttons/2Player1.png" id="16_4ekek"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelSelect.gd" id="16_f4cxc"]
+[ext_resource type="Texture2D" uid="uid://d1lnuex8ja3ys" path="res://Sprites/UI/levelButton/levelButton.png" id="17_308sp"]
+[ext_resource type="Texture2D" uid="uid://swylc1o74r32" path="res://Sprites/UI/Buttons/3Player0.png" id="17_ccdaw"]
+[ext_resource type="Script" path="res://Scripts/Buttons/levelButton.gd" id="18_1opcl"]
+[ext_resource type="Texture2D" uid="uid://ciws8uxi1o5qo" path="res://Sprites/UI/Buttons/3Player1.png" id="18_hwb1c"]
+[ext_resource type="Texture2D" uid="uid://cg6eal0jrk06a" path="res://Sprites/UI/objectiveFlower.png" id="19_i3lk8"]
+[ext_resource type="Texture2D" uid="uid://ctbnnimiiari6" path="res://Sprites/UI/Buttons/4Player0.png" id="19_s0pyu"]
+[ext_resource type="Texture2D" uid="uid://cfg7b8am41v0v" path="res://Sprites/UI/Buttons/4Player1.png" id="20_dd74t"]
+[ext_resource type="Texture2D" uid="uid://dvqcv0oim51k1" path="res://Sprites/UI/levelButton/levelButton2.png" id="20_mt61a"]
+[ext_resource type="Texture2D" uid="uid://dr2iux0rp5fh0" path="res://Sprites/UI/Buttons/worldSelect02.png" id="36_85p5w"]
 
-[node name="main_menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tw5mr"]
+
+[sub_resource type="Theme" id="Theme_hefma"]
+default_font = ExtResource("14_e7mnu")
+default_font_size = 32
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/fonts/Font = ExtResource("14_e7mnu")
+MarginContainer/constants/margin_bottom = 40
+
+[sub_resource type="Animation" id="Animation_aw110"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("menuElements/levelSelect/ui:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c6edo"]
+resource_name = "toLevelSelect"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -640)]
+}
+
+[sub_resource type="Animation" id="Animation_ot28y"]
+resource_name = "world2"
+length = 0.72
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("menuElements/levelSelect/ui:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.72),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1152, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.72),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -640), Vector2(-1152, -640)]
+}
+
+[sub_resource type="Animation" id="Animation_ryfqb"]
+resource_name = "world3"
+length = 0.72
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("menuElements/levelSelect/ui:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.72),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1152, 0), Vector2(2304, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.72),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, -640), Vector2(-2304, -640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ggsoi"]
+_data = {
+"RESET": SubResource("Animation_aw110"),
+"toLevelSelect": SubResource("Animation_c6edo"),
+"world2": SubResource("Animation_ot28y"),
+"world3": SubResource("Animation_ryfqb")
+}
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_mupe6")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -1
-layout_mode = 0
-offset_right = 288.0
-offset_bottom = 160.0
+offset_right = 864.0
+offset_bottom = 320.0
 scale = Vector2(4, 4)
 mouse_filter = 2
-texture = ExtResource("10_amd5o")
+texture = ExtResource("1_w8xd1")
 
-[node name="start menu" type="Node" parent="."]
+[node name="menuElements" type="Node2D" parent="."]
 
-[node name="Title Card" type="TextureRect" parent="start menu"]
+[node name="startMenu" type="Node2D" parent="menuElements"]
+script = ExtResource("3_f5iy4")
+
+[node name="Menu" type="Node2D" parent="menuElements/startMenu"]
+
+[node name="Title Card" type="TextureRect" parent="menuElements/startMenu/Menu"]
 offset_left = 320.0
 offset_top = 24.0
 offset_right = 448.0
 offset_bottom = 64.0
 scale = Vector2(4, 4)
 mouse_filter = 2
-texture = ExtResource("1_65l1t")
+texture = ExtResource("4_mx6eg")
 
-[node name="Start" type="TextureButton" parent="start menu"]
+[node name="Start" type="TextureButton" parent="menuElements/startMenu/Menu"]
 offset_left = 384.0
 offset_top = 304.0
 offset_right = 448.0
@@ -47,29 +194,269 @@ offset_bottom = 320.0
 scale = Vector2(6, 6)
 mouse_filter = 1
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("1_2tf1x")
-texture_pressed = ExtResource("2_hev2d")
-script = ExtResource("3_f7uja")
+texture_normal = ExtResource("5_qsgoc")
+texture_pressed = ExtResource("6_5u66b")
 
-[node name="Options" type="TextureButton" parent="start menu"]
+[node name="Options" type="TextureButton" parent="menuElements/startMenu/Menu"]
+offset_left = 384.0
+offset_top = 400.0
+offset_right = 448.0
+offset_bottom = 416.0
+scale = Vector2(6, 6)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_jk5bv")
+texture_pressed = ExtResource("8_mpt8f")
+
+[node name="Quit" type="TextureButton" parent="menuElements/startMenu/Menu"]
+offset_left = 384.0
+offset_top = 496.0
+offset_right = 448.0
+offset_bottom = 512.0
+scale = Vector2(6, 6)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_yaddk")
+texture_pressed = ExtResource("10_7if6e")
+
+[node name="Button" type="Button" parent="menuElements/startMenu/Menu"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(4, 4)
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tw5mr")
+flat = true
+script = ExtResource("11_u6pfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="menuElements/startMenu/Menu/Button"]
+texture = ExtResource("11_h8k6e")
+centered = false
+vframes = 5
+
+[node name="TextureRect" type="TextureRect" parent="menuElements/startMenu"]
 visible = false
-offset_left = 384.0
-offset_top = 400.0
-offset_right = 448.0
-offset_bottom = 416.0
-scale = Vector2(6, 6)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_u4mje")
-texture_pressed = ExtResource("5_lfv44")
-script = ExtResource("3_f7uja")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 480.0
+offset_top = 256.0
+offset_right = 672.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+pivot_offset = Vector2(96, 60)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("11_3skk3")
+stretch_mode = 2
 
-[node name="Quit" type="TextureButton" parent="start menu"]
-offset_left = 384.0
-offset_top = 400.0
-offset_right = 448.0
-offset_bottom = 416.0
-scale = Vector2(6, 6)
+[node name="HBoxContainer" type="FlowContainer" parent="menuElements/startMenu/TextureRect"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 26.0
+offset_right = 140.0
+offset_bottom = 94.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(40, 34)
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 0
+
+[node name="1" type="TextureButton" parent="menuElements/startMenu/TextureRect/HBoxContainer"]
+layout_mode = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("4_34dpi")
-texture_pressed = ExtResource("5_1xf3k")
-script = ExtResource("4_hbig8")
+texture_normal = ExtResource("12_g77bq")
+texture_pressed = ExtResource("13_2g5au")
+script = ExtResource("14_h8ou8")
+
+[node name="2" type="TextureButton" parent="menuElements/startMenu/TextureRect/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("15_y86s1")
+texture_pressed = ExtResource("16_4ekek")
+script = ExtResource("14_h8ou8")
+
+[node name="3" type="TextureButton" parent="menuElements/startMenu/TextureRect/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_ccdaw")
+texture_pressed = ExtResource("18_hwb1c")
+script = ExtResource("14_h8ou8")
+
+[node name="4" type="TextureButton" parent="menuElements/startMenu/TextureRect/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("19_s0pyu")
+texture_pressed = ExtResource("20_dd74t")
+script = ExtResource("14_h8ou8")
+
+[node name="levelSelect" type="Control" parent="menuElements"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 640.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_y25nh")
+script = ExtResource("5_blnvl")
+
+[node name="Levels" type="Control" parent="menuElements/levelSelect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="levelGrid" type="GridContainer" parent="menuElements/levelSelect/Levels"]
+layout_mode = 1
+offset_left = 128.0
+offset_top = 96.0
+offset_right = 1024.0
+offset_bottom = 544.0
+pivot_offset = Vector2(512, 256)
+theme = SubResource("Theme_hefma")
+theme_override_constants/h_separation = 44
+theme_override_constants/v_separation = 64
+columns = 5
+script = ExtResource("15_8j85v")
+world = 1
+
+[node name="levelSelectTemplate1" type="AspectRatioContainer" parent="menuElements/levelSelect/Levels/levelGrid"]
+use_parent_material = true
+layout_mode = 2
+script = ExtResource("16_f4cxc")
+
+[node name="TextureButton" type="TextureButton" parent="menuElements/levelSelect/Levels/levelGrid/levelSelectTemplate1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+action_mode = 0
+texture_normal = ExtResource("17_308sp")
+stretch_mode = 0
+script = ExtResource("18_1opcl")
+
+[node name="MarginContainer" type="MarginContainer" parent="menuElements/levelSelect/Levels/levelGrid/levelSelectTemplate1/TextureButton"]
+layout_mode = 2
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 168.0
+
+[node name="Label" type="Label" parent="menuElements/levelSelect/Levels/levelGrid/levelSelectTemplate1/TextureButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+
+[node name="flowerCompletion" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid/levelSelectTemplate1"]
+visible = false
+position = Vector2(28, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="flowerTurns" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid/levelSelectTemplate1"]
+visible = false
+position = Vector2(72, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="flowerTime" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid/levelSelectTemplate1"]
+visible = false
+position = Vector2(116, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="levelGrid2" type="GridContainer" parent="menuElements/levelSelect/Levels"]
+layout_mode = 1
+offset_left = 1280.0
+offset_top = 96.0
+offset_right = 2176.0
+offset_bottom = 544.0
+pivot_offset = Vector2(512, 256)
+theme = SubResource("Theme_hefma")
+theme_override_constants/h_separation = 44
+theme_override_constants/v_separation = 64
+columns = 5
+script = ExtResource("15_8j85v")
+world = 2
+
+[node name="levelSelectTemplate1" type="AspectRatioContainer" parent="menuElements/levelSelect/Levels/levelGrid2"]
+use_parent_material = true
+layout_mode = 2
+script = ExtResource("16_f4cxc")
+
+[node name="TextureButton" type="TextureButton" parent="menuElements/levelSelect/Levels/levelGrid2/levelSelectTemplate1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+action_mode = 0
+texture_normal = ExtResource("20_mt61a")
+stretch_mode = 0
+script = ExtResource("18_1opcl")
+
+[node name="MarginContainer" type="MarginContainer" parent="menuElements/levelSelect/Levels/levelGrid2/levelSelectTemplate1/TextureButton"]
+layout_mode = 2
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 168.0
+
+[node name="Label" type="Label" parent="menuElements/levelSelect/Levels/levelGrid2/levelSelectTemplate1/TextureButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+
+[node name="flowerCompletion" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid2/levelSelectTemplate1"]
+visible = false
+position = Vector2(28, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="flowerTurns" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid2/levelSelectTemplate1"]
+visible = false
+position = Vector2(72, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="flowerTime" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid2/levelSelectTemplate1"]
+visible = false
+position = Vector2(116, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="ui" type="Node2D" parent="menuElements/levelSelect"]
+
+[node name="TextureButton" type="TextureButton" parent="menuElements/levelSelect/ui"]
+offset_right = 32.0
+offset_bottom = 16.0
+scale = Vector2(4, 4)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_v3jvq")
+texture_pressed = ExtResource("7_hnvc6")
+
+[node name="worldSelectRight" type="TextureButton" parent="menuElements/levelSelect/ui"]
+offset_left = 1056.0
+offset_top = 256.0
+offset_right = 1072.0
+offset_bottom = 288.0
+scale = Vector2(4, 4)
+disabled = true
+texture_normal = ExtResource("10_i0jjh")
+texture_pressed = ExtResource("11_7pdve")
+texture_disabled = ExtResource("36_85p5w")
+
+[node name="worldSelectLeft" type="TextureButton" parent="menuElements/levelSelect/ui"]
+visible = false
+offset_left = 32.0
+offset_top = 256.0
+offset_right = 48.0
+offset_bottom = 288.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("12_a5w8y")
+texture_pressed = ExtResource("13_df4fn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ggsoi")
+}

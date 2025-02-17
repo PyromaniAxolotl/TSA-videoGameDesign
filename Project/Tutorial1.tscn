@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvwo22kivm0ff"]
+
+[ext_resource type="Theme" uid="uid://bpklcfwver0p0" path="res://Themes/menu.tres" id="1_1rhop"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 80.0
+offset_right = 960.0
+offset_bottom = 560.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 112.0
+offset_right = 928.0
+offset_bottom = 528.0
+theme = ExtResource("1_1rhop")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 224.0
+offset_top = 112.0
+offset_right = 3744.0
+offset_bottom = 2192.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("1_1rhop")
+theme_override_font_sizes/normal_font_size = 128
+text = "	So the goal"
+fit_content = true

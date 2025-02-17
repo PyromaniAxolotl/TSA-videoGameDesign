@@ -1,6 +1,100 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds158c410smyc"]
+[gd_scene load_steps=8 format=3 uid="uid://ds158c410smyc"]
 
 [ext_resource type="Script" path="res://Scripts/transition_manager.gd" id="1_kcqe2"]
+[ext_resource type="Shader" path="res://Shaders/lineTransition.gdshader" id="3_cwu2b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fn488"]
+shader = ExtResource("3_cwu2b")
+shader_parameter/num_lines = 10.0
+shader_parameter/x_threshold = 0.371
+shader_parameter/y_threshold = 1.0
+shader_parameter/line_color_a = Color(0.847059, 0.678431, 0, 1)
+shader_parameter/line_color_b = Color(0, 0, 0, 1)
+shader_parameter/bg_alpha = 0.333
+shader_parameter/thickness = 0.526
+shader_parameter/offset = 0.0
+
+[sub_resource type="Animation" id="Animation_b6d8s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_fn488")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/x_threshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.371]
+}
+
+[sub_resource type="Animation" id="Animation_l1vxy"]
+resource_name = "in"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/x_threshold")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_hsejg"]
+resource_name = "out"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/x_threshold")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j5ho7"]
+_data = {
+"RESET": SubResource("Animation_b6d8s"),
+"in": SubResource("Animation_l1vxy"),
+"out": SubResource("Animation_hsejg")
+}
 
 [node name="TransitionManager" type="Node"]
 script = ExtResource("1_kcqe2")
+
+[node name="BeeTransition" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="BeeTransition"]
+material = SubResource("ShaderMaterial_fn488")
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.85, 0.68, 0, 0.45098)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BeeTransition"]
+libraries = {
+"": SubResource("AnimationLibrary_j5ho7")
+}

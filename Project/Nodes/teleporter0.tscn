@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxncfucgs4jet"]
 
-[ext_resource type="Shader" path="res://Shaders/teleporter.gdshader" id="1_a4ojd"]
+[ext_resource type="Shader" path="res://Shaders/colorChange.gdshader" id="1_a4ojd"]
 [ext_resource type="Script" path="res://Classes/Teleporter/teleporter.gd" id="1_pw48e"]
 [ext_resource type="Texture2D" uid="uid://bp8wv4cpaa7lk" path="res://Sprites/Interactables/Teleporter.png" id="2_h1tgq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6501"]
 resource_local_to_scene = true
 shader = ExtResource("1_a4ojd")
-shader_parameter/new_color = Color(0.280054, 0.466442, 1, 1)
+shader_parameter/new_color = Color(0.1316, 0.22184, 0.47, 1)
 
 [node name="Teleporter0" type="Node2D" groups=["Pickupables"]]
 material = SubResource("ShaderMaterial_f6501")

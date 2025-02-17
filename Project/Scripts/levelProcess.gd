@@ -57,10 +57,17 @@ func handleActions():
 			%Player/Sprite2D.get_children()[0].useItem()
 		handleActions()
 
-func finishLevel():
-	SaveManager.levelData[level]=[true,turns,time]
+func finishLevel(_complete: bool = 1):
+	var levelData = SaveManager.levelData[level]
+	if levelData[0]:
+		levelData[1] = min(turns, levelData[1])
+		levelData[2] = min(time, levelData[2])
+	elif _complete:
+		levelData[1] = turns
+		levelData[2] = time
+	levelData[0] = _complete
 	SaveManager.writeData()
-	TransitionManager.changeScene(load("res://level_select.tscn"))
+	TransitionManager.changeScene(load("res://main_menu.tscn"),(level/10)+1)
 
 # Called when the node enters the scene tree for the first time (good for duplicating nodes with script).
 func _ready() -> void:
@@ -79,10 +86,12 @@ func _process(delta: float) -> void:
 		turnQueue += 1
 		if time==0:
 			time+=delta
+	if Input.is_action_just_pressed("Escape"):
+		finishLevel(0)
 	if turnQueue and %Player.actionable:
 		handleActions()
 		turns+=1
 		turnQueue-=1
 	if Input.is_action_just_pressed("Reset"): #Resets level to initial state.
-		get_tree().reload_current_scene()
+		TransitionManager.reloadScene()
 	displayInputs()
