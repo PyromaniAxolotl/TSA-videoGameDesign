@@ -3,6 +3,7 @@ extends Pickupable
 signal water
 
 func useItem():
+	SoundManager.playSound(SoundManager.water)
 	water.emit()
 
 func _ready():

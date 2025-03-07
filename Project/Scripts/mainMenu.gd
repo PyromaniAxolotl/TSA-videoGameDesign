@@ -22,6 +22,7 @@ func displayOptions():
 	$menuElements/startMenu/Menu.visible = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SoundManager.playMusic(SoundManager.buzzwords)
 	world = TransitionManager.targetWorld
 	if world:
 		position = Vector2((world-1)*-1152,-640)

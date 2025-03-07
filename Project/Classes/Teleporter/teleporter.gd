@@ -11,6 +11,7 @@ func useItem():
 	$"/root/level".tryPickup.emit()
 	player.position = tempPosition
 	player.gridPos = partner.gridPos
+	SoundManager.playSound(SoundManager.teleport)
 
 
 func _ready():

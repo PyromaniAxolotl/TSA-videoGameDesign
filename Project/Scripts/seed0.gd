@@ -6,4 +6,5 @@ func water():
 	var dirIndex: int = dirs.find(gridPos-%Player.gridPos)
 	if dirIndex != -1 and %TileMapLayer.get_cell_tile_data(gridPos+dirs[dirIndex]) != null:
 		%TileMapLayer.set_cell(gridPos+dirs[dirIndex],1,Vector2i(1,9))
+		SoundManager.playSound(SoundManager.seedGrowth)
 		queue_free()

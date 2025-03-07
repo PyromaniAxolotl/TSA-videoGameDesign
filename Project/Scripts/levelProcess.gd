@@ -72,6 +72,12 @@ func finishLevel(_complete: bool = 1):
 # Called when the node enters the scene tree for the first time (good for duplicating nodes with script).
 func _ready() -> void:
 	level-=1
+	if level<10:
+		SoundManager.playMusic(SoundManager.fuzzybuzz)
+	elif 9<level and level<20:
+		SoundManager.playMusic(SoundManager.heavypollination)
+	else:
+		SoundManager.playMusic(SoundManager.wateronwings)
 	for node in get_tree().get_nodes_in_group("Pickupables"):
 		tryPickup.connect(node.tryPickup)
 
