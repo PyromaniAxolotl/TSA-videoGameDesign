@@ -2,7 +2,7 @@ extends TextureButton
 
 @onready var number = int(str(name))
 var controlList: Array = ["Up","Down","Left","Right","Grab","Use","Go"]
-var inputList: Array = [
+var inputList: Array = [ #Binds
 	[KEY_W,KEY_S,KEY_A,KEY_D,KEY_H,KEY_J,KEY_K],
 	[KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT,KEY_A,KEY_S,KEY_D],
 	[KEY_UP,KEY_A,KEY_K,KEY_L,KEY_DOWN,KEY_S,KEY_J],
@@ -10,13 +10,13 @@ var inputList: Array = [
 	]
 
 func key(targetKey):
-	var key = InputEventKey.new()
-	key.physical_keycode = targetKey
-	return key
+	var keyInput = InputEventKey.new()
+	keyInput.physical_keycode = targetKey
+	return keyInput
 
-func setInput(action: String, key):
+func setInput(action: String, keyInput):
 	InputMap.action_erase_events(action)
-	InputMap.action_add_event(action,key(key))
+	InputMap.action_add_event(action,key(keyInput))
 
 func _pressed():
 	for i in range(7):

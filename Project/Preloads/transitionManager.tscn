@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ds158c410smyc"]
 
-[ext_resource type="Script" path="res://Scripts/transition_manager.gd" id="1_kcqe2"]
-[ext_resource type="Shader" path="res://Shaders/lineTransition.gdshader" id="3_cwu2b"]
+[ext_resource type="Script" uid="uid://cpctk4svmhjqj" path="res://Scripts/transition_manager.gd" id="1_kcqe2"]
+[ext_resource type="Shader" uid="uid://h48k4rdk10bw" path="res://Shaders/lineTransition.gdshader" id="3_cwu2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fn488"]
 shader = ExtResource("3_cwu2b")
@@ -77,9 +77,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j5ho7"]
 _data = {
-"RESET": SubResource("Animation_b6d8s"),
-"in": SubResource("Animation_l1vxy"),
-"out": SubResource("Animation_hsejg")
+&"RESET": SubResource("Animation_b6d8s"),
+&"in": SubResource("Animation_l1vxy"),
+&"out": SubResource("Animation_hsejg")
 }
 
 [node name="TransitionManager" type="Node"]

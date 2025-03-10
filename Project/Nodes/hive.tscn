@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://s61p2ovfes3f"]
 
-[ext_resource type="Script" path="res://Scripts/target.gd" id="1_8l3r1"]
+[ext_resource type="Script" uid="uid://c2ql0qmgssqbs" path="res://Scripts/target.gd" id="1_8l3r1"]
 [ext_resource type="Texture2D" uid="uid://c5f5rvv7m25nm" path="res://Sprites/Interactables/Hive.png" id="2_fsona"]
 
 [node name="Hive" type="Node2D"]

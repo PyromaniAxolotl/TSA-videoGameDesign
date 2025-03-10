@@ -23,7 +23,7 @@ func correctInputs():
 		exclusiveInputArray.pop_at(index)
 
 	if len(inputArray)<3:
-		for i in controlList: if (not i in inputArray) and (not i in exclusiveInputArray): #Runs through every input that wasn't pressed last frame, ignoring exclusives
+		for i in controlList: if (not i in inputArray): #Runs through every input that wasn't pressed last frame, ignoring exclusives
 			if Input.is_action_just_pressed(i) and len(inputArray)<3: #Adds pressed inputs to inputArray
 				inputArray.append(i)
 				exclusiveInputArray.append(controlList[controlList.find(i)+(1+(-2*(controlList.find(i)%2)))]) #Adds the exlusive of the input to the list
@@ -59,13 +59,13 @@ func handleActions():
 
 func finishLevel(_complete: bool = 1):
 	var levelData = SaveManager.levelData[level]
-	if levelData[0]:
+	if levelData[0] and _complete:
 		levelData[1] = min(turns, levelData[1])
 		levelData[2] = min(time, levelData[2])
 	elif _complete:
+		levelData[0] = true
 		levelData[1] = turns
 		levelData[2] = time
-	levelData[0] = _complete
 	SaveManager.writeData()
 	TransitionManager.changeScene(load("res://main_menu.tscn"),(level/10)+1)
 

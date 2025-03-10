@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxncfucgs4jet"]
 
-[ext_resource type="Shader" path="res://Shaders/colorChange.gdshader" id="1_a4ojd"]
-[ext_resource type="Script" path="res://Classes/Teleporter/teleporter.gd" id="1_pw48e"]
+[ext_resource type="Shader" uid="uid://ht8jdg4fbiyn" path="res://Shaders/colorChange.gdshader" id="1_a4ojd"]
+[ext_resource type="Script" uid="uid://biwcom50ratu" path="res://Classes/Teleporter/teleporter.gd" id="1_pw48e"]
 [ext_resource type="Texture2D" uid="uid://bp8wv4cpaa7lk" path="res://Sprites/Interactables/Teleporter.png" id="2_h1tgq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f6501"]

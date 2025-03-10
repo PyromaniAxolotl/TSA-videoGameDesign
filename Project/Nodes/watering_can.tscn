@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7qaplxeiojwf"]
 
-[ext_resource type="Script" path="res://Scripts/watering_can.gd" id="1_pr8um"]
+[ext_resource type="Script" uid="uid://d1nlgaft3ff8x" path="res://Scripts/watering_can.gd" id="1_pr8um"]
 [ext_resource type="Texture2D" uid="uid://by6jm6x4a0h5w" path="res://Sprites/Interactables/WateringCan.png" id="2_cksru"]
 
 [node name="Watering Can" type="Node2D" groups=["Pickupables"]]

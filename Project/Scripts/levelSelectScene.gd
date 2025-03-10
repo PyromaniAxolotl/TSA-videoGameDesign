@@ -21,9 +21,29 @@ var completionCriteria = [
 	[100,100.0],
 	[100,100.0],
 	[100,100.0],
-	[100,100.0]
+	[100,100.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
+	[0,0.0],
 ]
 
-func _ready(): #Prevents crash during development of levels, so you can play without completion criteria
-	while len(completionCriteria)<len(SaveManager.levelData):
+func _ready(): #Prevents crash during development of levels, so you can test new levels without completion criteria
+	while len(completionCriteria)<SaveManager.numberOfLevels:
 		completionCriteria.append([0,0.0])

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://b4wsdqmdqlhhi"]
 
-[ext_resource type="Script" path="res://Scripts/levelProcess.gd" id="1_mauoe"]
+[ext_resource type="Script" uid="uid://bouq7022aclot" path="res://Scripts/levelProcess.gd" id="1_mauoe"]
 [ext_resource type="PackedScene" uid="uid://c7qaplxeiojwf" path="res://Nodes/watering_can.tscn" id="2_ib76m"]
 [ext_resource type="PackedScene" uid="uid://confde55xdcg3" path="res://Nodes/flower.tscn" id="3_v8t3q"]
 [ext_resource type="PackedScene" uid="uid://du5cqtoo3qpi5" path="res://Nodes/controls.tscn" id="4_4ibci"]

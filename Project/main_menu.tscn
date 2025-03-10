@@ -1,11 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://dvdcdvvur6uy1"]
+[gd_scene load_steps=47 format=3 uid="uid://dvdcdvvur6uy1"]
 
-[ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_mupe6"]
+[ext_resource type="Script" uid="uid://dpa2ptj422r3r" path="res://Scripts/mainMenu.gd" id="1_mupe6"]
 [ext_resource type="Texture2D" uid="uid://cg5qcoescoyen" path="res://Sprites/UI/Backgrounds/BigBackground.png" id="1_w8xd1"]
-[ext_resource type="Script" path="res://Scripts/startMenu.gd" id="3_f5iy4"]
+[ext_resource type="Script" uid="uid://06pyh1upovcw" path="res://Scripts/startMenu.gd" id="3_f5iy4"]
 [ext_resource type="Texture2D" uid="uid://w6ojpvff8n4n" path="res://Sprites/UI/Backgrounds/TitleCard.png" id="4_mx6eg"]
 [ext_resource type="Theme" uid="uid://bpklcfwver0p0" path="res://Themes/menu.tres" id="4_y25nh"]
-[ext_resource type="Script" path="res://Scripts/levelSelectScene.gd" id="5_blnvl"]
+[ext_resource type="Script" uid="uid://fejq1crhekus" path="res://Scripts/levelSelectScene.gd" id="5_blnvl"]
 [ext_resource type="Texture2D" uid="uid://bausbocqtq2on" path="res://Sprites/UI/Buttons/Start0.png" id="5_qsgoc"]
 [ext_resource type="Texture2D" uid="uid://dqsrfck88wv1w" path="res://Sprites/UI/Buttons/Start1.png" id="6_5u66b"]
 [ext_resource type="Texture2D" uid="uid://rixy4vnqgxso" path="res://Sprites/UI/Buttons/Exit0.png" id="6_v3jvq"]
@@ -18,25 +18,26 @@
 [ext_resource type="Texture2D" uid="uid://bg6h1lt4cgtmo" path="res://Sprites/UI/Backgrounds/InputPopupBG.png" id="11_3skk3"]
 [ext_resource type="Texture2D" uid="uid://eo77d0vspals" path="res://Sprites/UI/Buttons/worldSelect01.png" id="11_7pdve"]
 [ext_resource type="Texture2D" uid="uid://vmveasmfsgjp" path="res://Sprites/UI/keyboards/Keyboards.png" id="11_h8k6e"]
-[ext_resource type="Script" path="res://Scripts/infoButton.gd" id="11_u6pfo"]
+[ext_resource type="Script" uid="uid://dwkut3qolg3po" path="res://Scripts/infoButton.gd" id="11_u6pfo"]
 [ext_resource type="Texture2D" uid="uid://c2ylmus6iqv5t" path="res://Sprites/UI/Buttons/worldSelect10.png" id="12_a5w8y"]
 [ext_resource type="Texture2D" uid="uid://cavy5c8lfrgqe" path="res://Sprites/UI/Buttons/1Player0.png" id="12_g77bq"]
 [ext_resource type="Texture2D" uid="uid://c4ca33r0wn7d7" path="res://Sprites/UI/Buttons/1Player1.png" id="13_2g5au"]
 [ext_resource type="Texture2D" uid="uid://hk1dhanjudw7" path="res://Sprites/UI/Buttons/worldSelect11.png" id="13_df4fn"]
 [ext_resource type="FontFile" uid="uid://cq8yhcegeb8y7" path="res://Fonts/Hardpixel.OTF" id="14_e7mnu"]
-[ext_resource type="Script" path="res://Scripts/playerButton.gd" id="14_h8ou8"]
-[ext_resource type="Script" path="res://Scripts/level_grid.gd" id="15_8j85v"]
+[ext_resource type="Script" uid="uid://cii5l2wcqnhbd" path="res://Scripts/playerButton.gd" id="14_h8ou8"]
+[ext_resource type="Script" uid="uid://bi63hqonuu7bd" path="res://Scripts/level_grid.gd" id="15_8j85v"]
 [ext_resource type="Texture2D" uid="uid://dfprwq074v003" path="res://Sprites/UI/Buttons/2Player0.png" id="15_y86s1"]
 [ext_resource type="Texture2D" uid="uid://cjqmhtw1gu3l" path="res://Sprites/UI/Buttons/2Player1.png" id="16_4ekek"]
-[ext_resource type="Script" path="res://Scripts/Buttons/levelSelect.gd" id="16_f4cxc"]
+[ext_resource type="Script" uid="uid://dv8cleyvlopfu" path="res://Scripts/Buttons/levelSelect.gd" id="16_f4cxc"]
 [ext_resource type="Texture2D" uid="uid://d1lnuex8ja3ys" path="res://Sprites/UI/levelButton/levelButton.png" id="17_308sp"]
 [ext_resource type="Texture2D" uid="uid://swylc1o74r32" path="res://Sprites/UI/Buttons/3Player0.png" id="17_ccdaw"]
-[ext_resource type="Script" path="res://Scripts/Buttons/levelButton.gd" id="18_1opcl"]
+[ext_resource type="Script" uid="uid://y46ybqujky0d" path="res://Scripts/Buttons/levelButton.gd" id="18_1opcl"]
 [ext_resource type="Texture2D" uid="uid://ciws8uxi1o5qo" path="res://Sprites/UI/Buttons/3Player1.png" id="18_hwb1c"]
 [ext_resource type="Texture2D" uid="uid://cg6eal0jrk06a" path="res://Sprites/UI/objectiveFlower.png" id="19_i3lk8"]
 [ext_resource type="Texture2D" uid="uid://ctbnnimiiari6" path="res://Sprites/UI/Buttons/4Player0.png" id="19_s0pyu"]
 [ext_resource type="Texture2D" uid="uid://cfg7b8am41v0v" path="res://Sprites/UI/Buttons/4Player1.png" id="20_dd74t"]
 [ext_resource type="Texture2D" uid="uid://dvqcv0oim51k1" path="res://Sprites/UI/levelButton/levelButton2.png" id="20_mt61a"]
+[ext_resource type="Texture2D" uid="uid://dp1r14vtqfrf1" path="res://Sprites/UI/levelButton/levelButton3.png" id="32_2kjvi"]
 [ext_resource type="Texture2D" uid="uid://dr2iux0rp5fh0" path="res://Sprites/UI/Buttons/worldSelect02.png" id="36_85p5w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tw5mr"]
@@ -153,10 +154,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ggsoi"]
 _data = {
-"RESET": SubResource("Animation_aw110"),
-"toLevelSelect": SubResource("Animation_c6edo"),
-"world2": SubResource("Animation_ot28y"),
-"world3": SubResource("Animation_ryfqb")
+&"RESET": SubResource("Animation_aw110"),
+&"toLevelSelect": SubResource("Animation_c6edo"),
+&"world2": SubResource("Animation_ot28y"),
+&"world3": SubResource("Animation_ryfqb")
 }
 
 [node name="main_menu" type="Node2D"]
@@ -255,9 +256,9 @@ stretch_mode = 2
 
 [node name="HBoxContainer" type="FlowContainer" parent="menuElements/startMenu/TextureRect"]
 layout_mode = 0
-offset_left = 60.0
+offset_left = 58.0
 offset_top = 26.0
-offset_right = 140.0
+offset_right = 138.0
 offset_bottom = 94.0
 scale = Vector2(1.5, 1.5)
 pivot_offset = Vector2(40, 34)
@@ -425,6 +426,64 @@ position = Vector2(116, 164)
 scale = Vector2(2, 2)
 texture = ExtResource("19_i3lk8")
 
+[node name="levelGrid3" type="GridContainer" parent="menuElements/levelSelect/Levels"]
+layout_mode = 1
+offset_left = 2432.0
+offset_top = 96.0
+offset_right = 3328.0
+offset_bottom = 544.0
+pivot_offset = Vector2(512, 256)
+theme = SubResource("Theme_hefma")
+theme_override_constants/h_separation = 44
+theme_override_constants/v_separation = 64
+columns = 5
+script = ExtResource("15_8j85v")
+world = 3
+
+[node name="levelSelectTemplate1" type="AspectRatioContainer" parent="menuElements/levelSelect/Levels/levelGrid3"]
+use_parent_material = true
+layout_mode = 2
+script = ExtResource("16_f4cxc")
+
+[node name="TextureButton" type="TextureButton" parent="menuElements/levelSelect/Levels/levelGrid3/levelSelectTemplate1"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+action_mode = 0
+texture_normal = ExtResource("32_2kjvi")
+stretch_mode = 0
+script = ExtResource("18_1opcl")
+
+[node name="MarginContainer" type="MarginContainer" parent="menuElements/levelSelect/Levels/levelGrid3/levelSelectTemplate1/TextureButton"]
+layout_mode = 2
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 168.0
+
+[node name="Label" type="Label" parent="menuElements/levelSelect/Levels/levelGrid3/levelSelectTemplate1/TextureButton/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+
+[node name="flowerCompletion" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid3/levelSelectTemplate1"]
+visible = false
+position = Vector2(28, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="flowerTurns" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid3/levelSelectTemplate1"]
+visible = false
+position = Vector2(72, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
+[node name="flowerTime" type="Sprite2D" parent="menuElements/levelSelect/Levels/levelGrid3/levelSelectTemplate1"]
+visible = false
+position = Vector2(116, 164)
+scale = Vector2(2, 2)
+texture = ExtResource("19_i3lk8")
+
 [node name="ui" type="Node2D" parent="menuElements/levelSelect"]
 
 [node name="TextureButton" type="TextureButton" parent="menuElements/levelSelect/ui"]
@@ -441,7 +500,6 @@ offset_top = 256.0
 offset_right = 1072.0
 offset_bottom = 288.0
 scale = Vector2(4, 4)
-disabled = true
 texture_normal = ExtResource("10_i0jjh")
 texture_pressed = ExtResource("11_7pdve")
 texture_disabled = ExtResource("36_85p5w")
@@ -458,5 +516,5 @@ texture_pressed = ExtResource("13_df4fn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ggsoi")
+&"": SubResource("AnimationLibrary_ggsoi")
 }

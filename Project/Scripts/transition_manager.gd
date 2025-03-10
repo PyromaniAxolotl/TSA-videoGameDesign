@@ -2,7 +2,6 @@ extends Node
 
 var targetScene: PackedScene
 var targetWorld: int = 0
-signal returnToLevelSelect(world)
 
 func changeScene(scene: PackedScene, world: int = 0):
 	$BeeTransition/AnimationPlayer.animation_finished.connect(_onAnimationFinished_changeScene)

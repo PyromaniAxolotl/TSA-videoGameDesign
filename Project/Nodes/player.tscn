@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bh34kkx1hb1so"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_rptr3"]
+[ext_resource type="Script" uid="uid://buxl8q6vsgmpu" path="res://Scripts/player.gd" id="1_rptr3"]
 [ext_resource type="Texture2D" uid="uid://cm26sc3ikwj8x" path="res://Sprites/Bee/Bee.png" id="2_tcnd5"]
-[ext_resource type="Script" path="res://Scripts/playerSprite.gd" id="3_8m2d6"]
+[ext_resource type="Script" uid="uid://pxqhfbqt22pg" path="res://Scripts/playerSprite.gd" id="3_8m2d6"]
 
 [sub_resource type="Animation" id="Animation_ttejo"]
 length = 0.001
@@ -137,11 +137,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w1jl1"]
 _data = {
-"RESET": SubResource("Animation_ttejo"),
-"down": SubResource("Animation_0fy7q"),
-"left": SubResource("Animation_bjuqk"),
-"right": SubResource("Animation_wimus"),
-"up": SubResource("Animation_bowal")
+&"RESET": SubResource("Animation_ttejo"),
+&"down": SubResource("Animation_0fy7q"),
+&"left": SubResource("Animation_bjuqk"),
+&"right": SubResource("Animation_wimus"),
+&"up": SubResource("Animation_bowal")
 }
 
 [node name="Player" type="Node2D"]

@@ -46,7 +46,7 @@ func _ready():
 	teleport = load_mp3("res://Sounds/Teleport.mp3")
 	seedGrowth = load_mp3("res://Sounds/Seed.mp3")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if $"SFX Player".playing == false and soundQueue:
 		$"SFX Player".stream = soundQueue[0]
 		$"SFX Player".play()
